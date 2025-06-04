@@ -4,8 +4,6 @@ import {
   Typography,
   Box,
   LinearProgress,
-  useTheme,
-  useMediaQuery,
   Avatar,
   IconButton,
   Tooltip,
@@ -20,7 +18,7 @@ import {
 } from '@mui/icons-material';
 
 const DataCard = ({ title, value, unit, maxValue = 100, loading = false, trend = 0, lastUpdate }) => {
-  const theme = useTheme();
+  const theme = { palette: { primary: { main: '#2196f3' }, secondary: { main: '#9c27b0' } } };
 
   const trendColor = () => {
     if (trend === 0) return 'text.secondary';

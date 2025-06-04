@@ -6,18 +6,9 @@ import {
   Container,
   AppBar,
   Toolbar,
-  IconButton,
-  useTheme,
-  CssBaseline,
-  useMediaQuery,
-  Paper,
   Button,
   CircularProgress,
-  Card,
-  CardContent,
-  CardMedia,
-  CardActions,
-  Avatar,
+  CssBaseline,
 } from '@mui/material';
 import {
   Refresh as RefreshIcon,
@@ -38,8 +29,7 @@ const theme = {
   warning: '#ff9800',
 };
 
-// Custom gradient background
-const gradientBackground = `linear-gradient(135deg, ${theme.primary} 0%, ${theme.secondary} 100%)`;
+
 
 function App() {
   const [temperature, setTemperature] = useState(0);
@@ -81,7 +71,7 @@ function App() {
     fetchData();
     const interval = setInterval(fetchData, 2000);
     return () => clearInterval(interval);
-  }, []); // Empty dependency array since we don't want to recreate interval
+  }, [fetchData]); // Add fetchData to dependencies to prevent stale closures
 
   return (
     <Box sx={{ 
