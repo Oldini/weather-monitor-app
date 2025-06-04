@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Style pour les cartes */
+.MuiCard-root {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.MuiCard-root:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Style pour les barres de progression */
+.MuiLinearProgress-root {
+  height: 10px !important;
+  border-radius: 5px;
+}
+
+.MuiLinearProgress-bar {
+  border-radius: 5px !important;
+  background-color: #1976d2 !important;
+}
